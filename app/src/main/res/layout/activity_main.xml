@@ -8,7 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linearLayoutTeams">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -38,7 +39,7 @@
                 android:gravity="center"
                 android:text="0"
                 android:textColor="#000000"
-                android:textSize="50sp"
+                android:textSize="54sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -60,7 +61,7 @@
                 android:gravity="center"
                 android:text="0"
                 android:textColor="#000000"
-                android:textSize="30sp" />
+                android:textSize="40sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,25 +83,52 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-light"
-                        android:gravity="center"
-                        android:padding="8dp"
+                        android:gravity="center|right"
+                        android:padding="4dp"
                         android:text="GA"
                         android:textColor="#000000"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/text_gs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/text_team_a_ga_score"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:padding="4dp"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-light"
-                        android:gravity="center_horizontal"
-                        android:padding="8dp"
+                        android:gravity="center|right"
+                        android:padding="4dp"
                         android:text="GS"
                         android:textColor="#000000"
                         android:textSize="16sp"
                         android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/text_team_a_gs_score"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:padding="4dp"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -176,7 +204,7 @@
                 android:gravity="center"
                 android:text="0"
                 android:textColor="#000000"
-                android:textSize="50sp"
+                android:textSize="54sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -198,7 +226,7 @@
                 android:gravity="center"
                 android:text="0"
                 android:textColor="#000000"
-                android:textSize="30sp" />
+                android:textSize="40sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -218,8 +246,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-light"
-                        android:gravity="center"
-                        android:padding="8dp"
+                        android:gravity="center|right"
+                        android:padding="4dp"
                         android:text="GA"
                         android:textColor="#000000"
                         android:textSize="16sp"
@@ -229,13 +257,41 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:id="@+id/text_team_b_ga_score"
                         android:fontFamily="sans-serif-light"
-                        android:gravity="center_horizontal"
-                        android:padding="8dp"
+                        android:gravity="center|left"
+                        android:padding="4dp"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|right"
+                        android:padding="4dp"
                         android:text="GS"
                         android:textColor="#000000"
                         android:textSize="16sp"
                         android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/text_team_b_gs_score"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:padding="4dp"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -276,13 +332,34 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="4dp"
-        android:onClick="resetScore"
-        android:text="Reset" />
+        android:gravity="center"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            android:onClick="resetScore"
+            android:gravity="center"
+            android:text="Reset"
+            style="@style/AppThemeButton"
+            />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            android:onClick="nextQuarter"
+            android:gravity="center"
+            android:text="Next Quarter"
+            style="@style/AppThemeButton"
+            />
+    </LinearLayout>
 </RelativeLayout>
